@@ -40,12 +40,7 @@
                 textDiv.innerHTML = "No fragment portion in the URL.";
             }
         }
-
-        // Call the function when the DOM is fully loaded
-        window.onload = displayFragmentInDiv;
-    </script>
-    <script>
-          function resizeText() {
+        function resizeText() {
                   const text = document.getElementById("text");
                   let fontSize = 100; // Start with large size
                   text.style.fontSize = fontSize + "px";
@@ -54,10 +49,12 @@
                             fontSize--; // Decrease font size until it fits
                             text.style.fontSize = fontSize + "px";
                   }
-          }
-        window.addEventListener("resize", resizeText);
-        resizeText(); // Run on page load
-    </script>
+        }
+        function handleOnLoad() {
+            displayFragmentInDiv();
+            resizeText();
+        }
+        window.addEventListener("load", handleOnLoad);
     </script>
 </body>
 </html>
