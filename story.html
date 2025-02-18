@@ -44,5 +44,19 @@
         // Call the function when the DOM is fully loaded
         window.onload = displayFragmentInDiv;
     </script>
+    <script>
+          function resizeText() {
+                  const text = document.getElementById("text");
+                  let fontSize = 100; // Start with large size
+                  text.style.fontSize = fontSize + "px";
+
+                  while (text.scrollHeight > window.innerHeight || text.scrollWidth > window.innerWidth) {
+                            fontSize--; // Decrease font size until it fits
+                            text.style.fontSize = fontSize + "px";
+                  }
+          }
+          resizeText(); // Run on page load
+    </script>
+    </script>
 </body>
 </html>
