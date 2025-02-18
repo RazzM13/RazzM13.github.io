@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Calligraphy Text</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-color: #1C1C1C; /* Light background color for contrast */
+            padding: 1rem;
+        }
+        .centered-text {
+            font-family: 'Lobster', cursive;
+            font-size: 90px; /* Adjust as needed */
+            color: #f7f7f7; /* Dark text color */
+            text-align: center; /* Center text alignment */
+        }
+    </style>
+</head>
+<body>
+    <div id="text" class="centered-text"></div>
+    <script>
+        // Function to display the fragment portion of the URL in the div
+        function displayFragmentInDiv() {
+            const fragment = window.location.hash; // Get the fragment
+
+            // Select the div with ID 'text'
+            const textDiv = document.getElementById('text');
+
+            // Update the div's innerHTML
+            if (fragment) {
+                textDiv.innerHTML = decodeURIComponent(fragment.substring(1));
+            } else {
+                textDiv.innerHTML = "No fragment portion in the URL.";
+            }
+        }
+
+        // Call the function when the DOM is fully loaded
+        window.onload = displayFragmentInDiv;
+    </script>
+</body>
+</html>
