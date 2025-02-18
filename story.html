@@ -55,7 +55,8 @@
                             text.style.fontSize = fontSize + "px";
                   }
           }
-          resizeText(); // Run on page load
+        window.addEventListener("resize", resizeText);
+        resizeText(); // Run on page load
     </script>
     </script>
 </body>
